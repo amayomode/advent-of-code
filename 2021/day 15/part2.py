@@ -15,9 +15,7 @@ def find_cost(i, j, Graph):
 # Speed things up with a priority queue
 # O(n) creation O(log n) pop and push
 def lowest_risk_faster(Graph, expansion):
-    rows, cols = Graph.shape
-    rows *= expansion
-    cols *= expansion
+    rows, cols = map(lambda x: x*expansion, Graph.shape)
     p_queue = [(0, 0, 0)]
     heapq.heapify(p_queue)
     dist = {}
